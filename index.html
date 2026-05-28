@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bộ Lọc - Mini Game Triết Học: Chơi để hiểu – Đoàn kết để chiến thắng. Nâng cao tinh thần tập thể qua các thử thách trí tuệ vui nhộn."
+    />
+    <title>Bộ Lọc - Mini Game Triết Học</title>
+    <!-- Nhúng Google Font Inter (hỗ trợ tiếng Việt tốt) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header cố định phía trên (Layout HOCA: 3 phần) -->
+    <header class="site-header" id="site-header">
+      <div class="header-container">
+        <!-- Trái: Logo + Tên -->
+        <div class="header-left">
+          <a href="#" class="header-logo-link">
+            <img src="assets/logo.jpg" alt="Logo Bộ Lọc" class="header-logo" />
+            <span class="header-title">Bộ Lọc</span>
+          </a>
+        </div>
+
+        <!-- Giữa: Navigation links -->
+        <div class="header-center">
+          <nav class="header-nav">
+            <a href="#games-section" class="nav-link">Trò chơi</a>
+            <a href="#rules-section" class="nav-link">Thể lệ</a>
+            <a href="#rules-section" class="nav-link">Về chúng tôi</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section (Layout HOCA) -->
+      <section class="hero-section" id="hero-section">
+        <div class="hero-content">
+          <!-- Logo lớn có hiệu ứng floating -->
+          <div class="hero-logo-container">
+            <img
+              src="assets/logo.jpg"
+              alt="Logo Bộ Lọc lớn"
+              class="hero-logo"
+            />
+          </div>
+
+          <!-- Badge đã được gỡ theo yêu cầu -->
+
+          <!-- Tiêu đề 2 dòng đậm chất HOCA -->
+          <h1 class="hero-title">
+            Một thế giới vạn sắc màu<br />
+            <!-- <span class="highlight-text">Chiến thắng</span> -->
+          </h1>
+
+          <!-- Mô tả ngắn -->
+          <p class="hero-subtitle">
+            Bộ Lọc giúp bạn gắn kết cùng đồng đội trong các thử thách triết học
+            vui nhộn. Theo dõi thời gian, vượt qua chướng ngại và dành lấy ưu
+            tiên tham gia vòng quay may mắn.
+          </p>
+
+          <!-- 2 Nút bấm đặt cạnh nhau -->
+          <div class="hero-buttons">
+            <a href="#games-section" class="btn btn-primary" id="btn-start-now">
+              <span>Tham gia ngay</span>
+              <span class="btn-icon">🚀</span>
+            </a>
+            <a
+              href="#rules-section"
+              class="btn btn-outline"
+              id="btn-view-rules"
+            >
+              <span>Xem thể lệ</span>
+              <span class="btn-icon">📜</span>
+            </a>
+          </div>
+
+          <section id="games-section"></section>
+          <!-- Khung viền kép chứa 3 card game phong cách HOCA -->
+          <div class="games-container-wrapper">
+            <h2 class="section-title">Trò chơi</h2>
+            <div class="games-grid">
+              <!-- Card 1: Tam sao thất bản -->
+              <article
+                class="game-card"
+                id="card-tam-sao-that-ban"
+                data-game="tam-sao-that-ban"
+              >
+                <div class="game-card-body">
+                  <div class="game-card-icon">🗣️👥</div>
+                </div>
+                <div class="game-card-tag">Tam sao thất bản</div>
+              </article>
+
+              <!-- Card 2: Đoán hình ảnh -->
+              <article
+                class="game-card"
+                id="card-doan-hinh-anh"
+                data-game="doan-hinh-anh"
+              >
+                <div class="game-card-body">
+                  <div class="game-card-icon">👁️🖼️</div>
+                </div>
+                <div class="game-card-tag">Đoán hình ảnh</div>
+              </article>
+
+              <!-- Card 3: Ghi nhớ thẻ bài -->
+              <article
+                class="game-card"
+                id="card-ghi-nho-the-bai"
+                data-game="ghi-nho-the-bai"
+              >
+                <div class="game-card-body">
+                  <div class="game-card-icon">🧠🃏</div>
+                </div>
+                <div class="game-card-tag">Ghi nhớ thẻ bài</div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Thể lệ chung đặt dưới khung card game -->
+      <section class="rules-section" id="rules-section">
+        <div class="container">
+          <h2 class="section-title">📜 Thể Lệ Chung</h2>
+          <div class="rules-card">
+            <div class="rules-decor-top"></div>
+            <p class="rules-paragraph">
+              Mỗi nhóm sẽ bốc thăm ngẫu nhiên để xác định thứ tự tham gia 3 trò
+              chơi. Trong suốt trò chơi, thời gian hoàn thành của từng trò sẽ
+              được ghi nhận và cộng dồn để tính tổng thời gian của cả nhóm.
+            </p>
+            <p class="rules-paragraph highlight-box">
+              Kết quả cuối cùng sẽ được xét dựa trên tổng thời gian hoàn thành
+              sau khi trải qua đầy đủ 3 trò chơi. Nhóm có tổng thời gian hoàn
+              thành nhanh hơn sẽ được ưu tiên tham gia vòng quay trước.
+            </p>
+            <div class="rules-decor-bottom"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="site-footer">
+      <div class="container">
+        <p class="footer-title">Chương Trình "Bộ Lọc"</p>
+        <p class="footer-text">
+          © 2026 Bộ Lọc - Sân chơi trí tuệ & triết học cho sinh viên.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Modal Popup Chi tiết Trò chơi -->
+    <div class="modal-overlay" id="game-modal" aria-hidden="true">
+      <div
+        class="modal-container"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button
+          class="modal-close"
+          id="btn-close-modal"
+          aria-label="Đóng modal"
+        >
+          &times;
+        </button>
+        <div class="modal-content" id="modal-content">
+          <!-- Nội dung chi tiết của trò chơi sẽ được chèn động bằng JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
