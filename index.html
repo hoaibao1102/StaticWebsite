@@ -8,144 +8,418 @@
       content="Bộ Lọc - Mini Game Triết Học: Chơi để hiểu – Đoàn kết để chiến thắng. Nâng cao tinh thần tập thể qua các thử thách trí tuệ vui nhộn."
     />
     <title>Bộ Lọc - Mini Game Triết Học</title>
-    <!-- Nhúng Google Font Inter (hỗ trợ tiếng Việt tốt) -->
+    <!-- Nhúng Google Font Baloo 2 (phù hợp với thiết kế của ảnh mẫu) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Header cố định phía trên (Layout HOCA: 3 phần) -->
+    <!-- Background Blobs & Noise Overlay -->
+    <div class="blob-container" aria-hidden="true">
+      <div class="blob blob-blue"></div>
+      <div class="blob blob-red"></div>
+      <div class="blob blob-yellow"></div>
+    </div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Header / Glass Navigation Bar -->
     <header class="site-header" id="site-header">
       <div class="header-container">
-        <!-- Trái: Logo + Tên -->
+        <!-- Trái: Logo tròn + BỘ LỌC -->
         <div class="header-left">
           <a href="#" class="header-logo-link">
-            <img src="assets/logo.jpg" alt="Logo Bộ Lọc" class="header-logo" />
-            <span class="header-title">Bộ Lọc</span>
+            <div class="logo-wrapper">
+              <img
+                src="assets/logo.jpg"
+                alt="Logo Bộ Lọc"
+                class="header-logo"
+              />
+            </div>
+            <span class="header-title">
+              <span class="txt-blue">BỘ</span>
+              <span class="txt-red">LỌC</span>
+            </span>
           </a>
         </div>
 
-        <!-- Giữa: Navigation links -->
-        <div class="header-center">
+        <!-- Hamburger Button cho Mobile -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Mở menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Giữa & Phải: Menu + Nút Khám phá -->
+        <div class="header-nav-wrapper" id="header-nav-wrapper">
           <nav class="header-nav">
+            <a href="#about-project" class="nav-link">Về chương trình</a>
             <a href="#games-section" class="nav-link">Trò chơi</a>
             <a href="#rules-section" class="nav-link">Thể lệ</a>
-            <a href="#rules-section" class="nav-link">Về chúng tôi</a>
           </nav>
+          <div class="header-right">
+            <a href="#games-section" class="btn btn-cta">Khám phá</a>
+          </div>
         </div>
       </div>
     </header>
 
     <main>
-      <!-- Hero Section (Layout HOCA) -->
+      <!-- Hero Section -->
       <section class="hero-section" id="hero-section">
         <div class="hero-content">
-          <!-- Logo lớn có hiệu ứng floating -->
-          <div class="hero-logo-container">
-            <img
-              src="assets/logo.jpg"
-              alt="Logo Bộ Lọc lớn"
-              class="hero-logo"
-            />
+          <!-- Badge phía trên tiêu đề -->
+          <div class="hero-badge">
+            <span class="badge-icon">✨</span>
+            <span class="badge-text"
+              >Interactive Game Event - Triết học & Trải nghiệm nhóm</span
+            >
           </div>
 
-          <!-- Badge đã được gỡ theo yêu cầu -->
-
-          <!-- Tiêu đề 2 dòng đậm chất HOCA -->
+          <!-- Tiêu đề chính cực lớn -->
           <h1 class="hero-title">
-            Một thế giới vạn sắc màu<br />
-            <!-- <span class="highlight-text">Chiến thắng</span> -->
+            <span class="title-bo">BỘ</span><span class="title-loc">LỌC</span>
           </h1>
 
-          <!-- Mô tả ngắn -->
+          <!-- Subtitle -->
           <p class="hero-subtitle">
-            Bộ Lọc giúp bạn gắn kết cùng đồng đội trong các thử thách triết học
-            vui nhộn. Theo dõi thời gian, vượt qua chướng ngại và dành lấy ưu
-            tiên tham gia vòng quay may mắn.
+            "Mỗi người đều đang nhìn thế giới qua một <em>lăng kính</em> riêng."
           </p>
 
-          <!-- 2 Nút bấm đặt cạnh nhau -->
+          <!-- 2 Nút bấm nằm giữa -->
           <div class="hero-buttons">
             <a href="#games-section" class="btn btn-primary" id="btn-start-now">
-              <span>Tham gia ngay</span>
-              <span class="btn-icon">🚀</span>
+              Khám phá trò chơi <span class="arrow-icon">↓</span>
             </a>
-            <a
-              href="#rules-section"
-              class="btn btn-outline"
-              id="btn-view-rules"
-            >
-              <span>Xem thể lệ</span>
-              <span class="btn-icon">📜</span>
+            <a href="#rules-section" class="btn btn-glass" id="btn-view-rules">
+              Thể lệ chung
             </a>
           </div>
+        </div>
+      </section>
 
-          <section id="games-section"></section>
-          <!-- Khung viền kép chứa 3 card game phong cách HOCA -->
-          <div class="games-container-wrapper">
-            <h2 class="section-title">Trò chơi</h2>
-            <div class="games-grid">
-              <!-- Card 1: Tam sao thất bản -->
-              <article
-                class="game-card"
-                id="card-tam-sao-that-ban"
-                data-game="tam-sao-that-ban"
-              >
-                <div class="game-card-body">
-                  <div class="game-card-icon">🗣️👥</div>
+      <!-- Section 1: Về Bộ Lọc -->
+      <section class="about-project-section" id="about-project">
+        <div class="container">
+          <div class="about-project-grid">
+            <!-- Left content -->
+            <div class="about-project-left">
+              <div class="project-badge">VỀ DỰ ÁN</div>
+              <h2 class="project-title">
+                Về <span class="title-bo">Bộ</span>
+                <span class="title-loc">Lọc</span>
+              </h2>
+              <p class="project-text">
+                Mỗi người đều có hoàn cảnh sống, môi trường và trải nghiệm khác
+                nhau, vì vậy cách mỗi cá nhân nhìn nhận cuộc sống cũng không
+                giống nhau. Triết học gọi đó là mối quan hệ giữa
+                <span class="highlight-blue">vật chất</span> và
+                <span class="highlight-red">ý thức</span> — nơi ý thức được hình
+                thành và chịu sự tác động từ hiện thực khách quan cùng các điều
+                kiện sống xung quanh.
+              </p>
+              <p class="project-text">
+                Dự án <strong>“Bộ Lọc”</strong> ra đời từ đó. Vì mỗi cá nhân đều
+                đang nhìn thế giới thông qua một “bộ lọc” riêng — được hình
+                thành từ môi trường sống, hoàn cảnh, trải nghiệm và nhận thức
+                của bản thân.
+              </p>
+            </div>
+            <!-- Right quote card -->
+            <div class="about-project-right">
+              <div class="quote-card glass-card">
+                <div class="quote-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="quote-svg"
+                  >
+                    <path
+                      d="M11.19 6C9.17 6 7.5 7.67 7.5 9.69C7.5 10.9 8.08 11.97 8.97 12.63C7.43 13.9 6.5 15.86 6.5 18H8.5C8.5 15.79 10.29 14 12.5 14V12C12.5 8.69 11.9 6 11.19 6ZM18.19 6C16.17 6 14.5 7.67 14.5 9.69C14.5 10.9 15.08 11.97 15.97 12.63C14.43 13.9 13.5 15.86 13.5 18H15.5C15.5 15.79 17.29 14 19.5 14V12C19.5 8.69 18.9 6 18.19 6Z"
+                      fill="#f2533d"
+                    />
+                  </svg>
                 </div>
-                <div class="game-card-tag">Tam sao thất bản</div>
-              </article>
-
-              <!-- Card 2: Đoán hình ảnh -->
-              <article
-                class="game-card"
-                id="card-doan-hinh-anh"
-                data-game="doan-hinh-anh"
-              >
-                <div class="game-card-body">
-                  <div class="game-card-icon">👁️🖼️</div>
-                </div>
-                <div class="game-card-tag">Đoán hình ảnh</div>
-              </article>
-
-              <!-- Card 3: Ghi nhớ thẻ bài -->
-              <article
-                class="game-card"
-                id="card-ghi-nho-the-bai"
-                data-game="ghi-nho-the-bai"
-              >
-                <div class="game-card-body">
-                  <div class="game-card-icon">🧠🃏</div>
-                </div>
-                <div class="game-card-tag">Ghi nhớ thẻ bài</div>
-              </article>
+                <p class="quote-text-paragraph">
+                  “Thế giới không thay đổi, nhưng
+                  <span class="highlight-blue">cách ta nhìn nó</span> có thể
+                  thay đổi <span class="highlight-red">tất cả</span>.”
+                </p>
+                <div class="quote-signature">— BỘ LỌC</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Section Thể lệ chung đặt dưới khung card game -->
+      <!-- Section 2: 3 Trò Chơi -->
+      <section class="games-section" id="games-section">
+        <div class="container">
+          <div class="games-header">
+            <div class="games-header-left">
+              <div class="games-badge">3 TRÒ CHƠI · 1 HÀNH TRÌNH</div>
+              <h2 class="games-section-title">
+                Mỗi trò chơi là một<br />
+                <span class="title-langkinh">lăng kính</span>
+              </h2>
+            </div>
+            <div class="games-header-right">
+              <p class="games-header-desc">
+                Chọn một thẻ để khám phá luật chơi, cách chơi và những lưu ý
+                dành cho nhóm bạn.
+              </p>
+            </div>
+          </div>
+
+          <div class="games-grid">
+            <!-- Card 1: Tam sao thất bản -->
+            <article
+              class="game-card glass-card card-blue"
+              id="card-tam-sao-that-ban"
+              data-game="tam-sao-that-ban"
+            >
+              <div class="card-glow glow-blue"></div>
+              <div class="card-top">
+                <div class="card-icon-circle bg-light-blue">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="card-svg"
+                  >
+                    <path
+                      d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.2L4 17.2V4H20V16Z"
+                      fill="#1757ab"
+                    />
+                  </svg>
+                </div>
+                <div class="card-number-top num-blue">01</div>
+              </div>
+              <div class="card-body-content">
+                <h3 class="card-game-title">Tam sao thất bản</h3>
+                <div class="card-tagline">“Một thông điệp — Ba lăng kính”</div>
+                <p class="card-desc">
+                  Truyền tải ý nghĩa qua nhiều người. Mỗi lăng kính sẽ kể một
+                  câu chuyện khác nhau.
+                </p>
+                <div class="card-link link-blue">
+                  Xem chi tiết <span class="arrow-right">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Đoán hình ảnh -->
+            <article
+              class="game-card glass-card card-red"
+              id="card-doan-hinh-anh"
+              data-game="doan-hinh-anh"
+            >
+              <div class="card-glow glow-red"></div>
+              <div class="card-top">
+                <div class="card-icon-circle bg-light-red">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="card-svg"
+                  >
+                    <path
+                      d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12C15 10.34 13.66 9 12 9Z"
+                      fill="#f2533d"
+                    />
+                  </svg>
+                </div>
+                <div class="card-number-top num-red">02</div>
+              </div>
+              <div class="card-body-content">
+                <h3 class="card-game-title">Đoán hình ảnh</h3>
+                <div class="card-tagline">“Nhìn thật kỹ — Đoán thật nhanh”</div>
+                <p class="card-desc">
+                  Một mảnh ghép của hiện thực — nhóm bạn nhìn ra điều gì trong
+                  vài giây ngắn ngủi?
+                </p>
+                <div class="card-link link-red">
+                  Xem chi tiết <span class="arrow-right">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Ghi nhớ thẻ bài -->
+            <article
+              class="game-card glass-card card-gold"
+              id="card-ghi-nho-the-bai"
+              data-game="ghi-nho-the-bai"
+            >
+              <div class="card-glow glow-gold"></div>
+              <div class="card-top">
+                <div class="card-icon-circle bg-light-gold">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="card-svg"
+                  >
+                    <path
+                      d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C8.74 12.09 8 10.66 8 9c0-2.21 1.79-4 4-4s4 1.79 4 4c0 1.66-.74 3.09-2.15 4.1z"
+                      fill="#b39625"
+                    />
+                  </svg>
+                </div>
+                <div class="card-number-top num-gold">03</div>
+              </div>
+              <div class="card-body-content">
+                <h3 class="card-game-title">Ghi nhớ thẻ bài</h3>
+                <div class="card-tagline">“Quan sát — Ghi nhớ — Kết nối”</div>
+                <p class="card-desc">
+                  Trí nhớ là một bộ lọc. Bạn nhìn thấy gì, và bạn còn nhớ được
+                  gì sau vài giây?
+                </p>
+                <div class="card-link link-gold">
+                  Xem chi tiết <span class="arrow-right">→</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Thể Lệ Chung -->
       <section class="rules-section" id="rules-section">
         <div class="container">
-          <h2 class="section-title">📜 Thể Lệ Chung</h2>
-          <div class="rules-card">
-            <div class="rules-decor-top"></div>
-            <p class="rules-paragraph">
-              Mỗi nhóm sẽ bốc thăm ngẫu nhiên để xác định thứ tự tham gia 3 trò
-              chơi. Trong suốt trò chơi, thời gian hoàn thành của từng trò sẽ
-              được ghi nhận và cộng dồn để tính tổng thời gian của cả nhóm.
+          <div class="rules-header">
+            <div class="rules-badge">THỂ LỆ CHUNG</div>
+            <h2 class="rules-section-title">
+              Luật chơi <span class="title-minhbach">minh bạch,</span><br />
+              công bằng
+            </h2>
+            <p class="rules-subtitle">
+              Một hành trình 3 chặng — nơi mỗi giây đều đáng giá và mỗi quyết
+              định đều phản ánh ‘bộ lọc’ của nhóm bạn.
             </p>
-            <p class="rules-paragraph highlight-box">
-              Kết quả cuối cùng sẽ được xét dựa trên tổng thời gian hoàn thành
-              sau khi trải qua đầy đủ 3 trò chơi. Nhóm có tổng thời gian hoàn
-              thành nhanh hơn sẽ được ưu tiên tham gia vòng quay trước.
-            </p>
-            <div class="rules-decor-bottom"></div>
+          </div>
+
+          <!-- 4 Small Cards Grid -->
+          <div class="rules-grid">
+            <!-- Card 1 -->
+            <div class="rules-item-card glass-card">
+              <div class="rules-item-top">
+                <div class="rules-icon-circle">
+                  <!-- Shuffle icon -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="rules-svg"
+                  >
+                    <path
+                      d="M10.59 9.17L5.41 4H4V6H5.17L10.34 11.17L10.59 9.17ZM14.5 4L16.5 6H13.5L10.5 9L11.9 10.4L14.9 7.4L16.9 9.4V4H14.5ZM20 20H18.59L13.41 14.83L13.16 16.83L18.34 22H20V20ZM14.5 20H16.9L14.9 18L11.9 21L10.5 19.6L13.5 16.6L14.5 17.6V20Z"
+                      fill="#1757ab"
+                    />
+                  </svg>
+                </div>
+                <span class="rules-item-num">01</span>
+              </div>
+              <h3 class="rules-item-title">Bốc thăm ngẫu nhiên</h3>
+              <p class="rules-item-desc">
+                Mỗi nhóm bốc thăm để xác định thứ tự tham gia 3 trò chơi.
+              </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="rules-item-card glass-card">
+              <div class="rules-item-top">
+                <div class="rules-icon-circle">
+                  <!-- Clock icon -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="rules-svg"
+                  >
+                    <path
+                      d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"
+                      fill="#1757ab"
+                    />
+                  </svg>
+                </div>
+                <span class="rules-item-num">02</span>
+              </div>
+              <h3 class="rules-item-title">Tính giờ từng trò</h3>
+              <p class="rules-item-desc">
+                Thời gian hoàn thành của mỗi trò chơi sẽ được ghi nhận và cộng
+                dồn.
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="rules-item-card glass-card">
+              <div class="rules-item-top">
+                <div class="rules-icon-circle">
+                  <!-- Users icon -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="rules-svg"
+                  >
+                    <path
+                      d="M16 11C17.66 11 18.99 9.66 18.99 8C18.99 6.34 17.66 5 16 5C14.34 5 13 6.34 13 8C13 9.66 14.34 11 16 11ZM8 11C9.66 11 10.99 9.66 10.99 8C10.99 6.34 9.66 5 8 5C6.34 5 5 6.34 5 8C5 9.66 6.34 11 8 11ZM8 13C5.67 13 1 14.17 1 16.5V19H15V16.5C15 14.17 10.33 13 8 13ZM16 13C15.71 13 15.38 13.02 15.03 13.05C16.2 13.89 17 15.02 17 16.5V19H23V16.5C23 14.17 18.33 13 16 13Z"
+                      fill="#1757ab"
+                    />
+                  </svg>
+                </div>
+                <span class="rules-item-num">03</span>
+              </div>
+              <h3 class="rules-item-title">Tổng thời gian nhóm</h3>
+              <p class="rules-item-desc">
+                Kết quả cuối cùng dựa trên tổng thời gian sau cả 3 trò chơi.
+              </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="rules-item-card glass-card">
+              <div class="rules-item-top">
+                <div class="rules-icon-circle">
+                  <!-- Trophy icon -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="rules-svg"
+                  >
+                    <path
+                      d="M19 5H18V3H6V5H5C3.9 5 3 5.9 3 7V9C3 11.21 4.79 13 7 13H9C9.79 13 10.5 12.63 11 12.1V17H9V19H15V17H13V12.1C13.5 12.63 14.21 13 15 13H17C19.21 13 21 11.21 21 9V7C21 5.9 20.1 5 19 5ZM5 9V7H6V9C6 9.55 5.55 10 5 10C4.45 10 4 9.55 4 9ZM19 9C19 9.55 18.55 10 18 10C17.45 10 17 9.55 17 9V7H18V9Z"
+                      fill="#1757ab"
+                    />
+                  </svg>
+                </div>
+                <span class="rules-item-num">04</span>
+              </div>
+              <h3 class="rules-item-title">Ưu tiên vòng quay</h3>
+              <p class="rules-item-desc">
+                Nhóm có tổng thời gian nhanh hơn sẽ được ưu tiên quay trước.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom banner -->
+          <div class="rules-banner">
+            <div class="banner-content">
+              <p class="banner-text">
+                Mỗi nhóm bốc thăm ngẫu nhiên, và
+                <span class="highlight-red">tổng thời gian</span> sau cả 3 trò
+                chơi quyết định ai được vào
+                <span class="underline-orange">vòng quay</span> trước.
+              </p>
+              <div class="banner-badge-right">
+                <span class="banner-badge-num">03</span>
+                <span class="banner-badge-lbl">TRÒ CHƠI</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -164,7 +438,7 @@
     <!-- Modal Popup Chi tiết Trò chơi -->
     <div class="modal-overlay" id="game-modal" aria-hidden="true">
       <div
-        class="modal-container"
+        class="modal-container glass-modal"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
